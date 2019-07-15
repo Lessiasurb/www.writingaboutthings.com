@@ -1,0 +1,106 @@
+<body class="homepage">
+  <header>
+    <div class="title">
+      <h1><span class="darker">ALESSIA</span> SORBO</h1>
+      <h2>Writing <span class="lighter">About</span> Things</h2>
+    </div>
+    <a class="down" href="#posts" rel="nofollow"></a>
+    <label class="theme-switcher">
+      <input type="checkbox">
+    </label>
+  </header>
+  <a name="posts"></a>
+  <ul class="posts">
+  <% var page_size = 5;
+    page.posts.each(function (post, index) {
+      if (index !== 0 && index % page_size === 0) { -%>
+    <noscript>
+  <%  } -%>
+    <li class="post">
+      <a class="cover" href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
+        <img src="<%= post.featured_image %>">
+      </a>
+      <div class="details">
+        <p><%= date(post.date) %></p>
+        <h3 class="title">
+          <a href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
+            <%= post.title %>
+          </a>
+        </h3>
+        <p><%= post.excerpt %></p>
+      </div>
+    </li>
+  <% });
+     if (page.posts.length > page_size) { -%>
+    </noscript>
+  <% } -%>
+  </ul>
+  <script>
+    (function () {
+      var posts_list = document.querySelector("ul.posts"),
+          posts_pages = Array.from(posts_list.querySelectorAll("noscript")),
+          tmp = document.createElement("ul"),
+          succ,
+          succ_container;
+      if (posts_pages.length) {
+        succ_container = document.createElement('li');
+        succ_container.className = "more";
+        succ = document.createElement('button');
+        succ.innerHTML = "More Posts";
+        succ.addEventListener('click', function () {
+          tmp.innerHTML = posts_pages.shift().innerHTML;
+          Array.from(tmp.querySelectorAll("li.post")).forEach(function (post) {
+            posts_list.insertBefore(post, succ_container);
+          });
+          if (!posts_pages.length) {
+            succ_container.remove();
+            return;
+          }
+        });
+        succ_container.appendChild(succ);
+        posts_list.appendChild(succ_container);
+      }
+    })();
+  </script>
+  <footer>
+    <% if (config.social) { -%>
+    <div class="social">
+      <% if (config.social.Twitter) { -%>
+      <a rel="external" href="https://twitter.com/<%= config.social.Twitter %>" target="_blank">
+        <img src="<%= url_for('/images/twitter.png') %>" alt="Twitter">
+      </a>
+      <% } -%>
+      <% if (config.social.Instagram) { -%>
+      <a rel="external" href="https://www.instagram.com/<%= config.social.Instagram %>" target="_blank">
+        <img src="<%= url_for('/images/instagram.png') %>" alt="Instagram">
+      </a>
+      <% } -%>
+      <% if (config.social.YouTube) { -%>
+      <a rel="external" href="https://www.youtube.com/user/<%= config.social.YouTube %>" target="_blank">
+        <img src="<%= url_for('/images/youtube.png') %>" alt="YouTube">
+      </a>
+      <% } -%>
+      <% if (config.social.LinkedIn) { -%>
+      <a rel="external" href="https://linkedin.com/in/<%= config.social.LinkedIn %>" target="_blank">
+        <img src="<%= url_for('/images/linkedin.png') %>" alt="LinkedIn">
+      </a>
+      <% } -%>
+      <% if (config.social.GoogleScholar) { -%>
+      <a rel="external" href="https://scholar.google.pt/citations?user=<%= config.social.GoogleScholar %>" target="_blank">
+        <img src="<%= url_for('/images/google_scholar.png') %>" alt="Google Scholar">
+      </a>
+      <% } -%>
+      <% if (config.social.DBLP) { -%>
+      <a rel="external" href="https://dblp.org/pers/hd/b/<%= config.social.DBLP %>" target="_blank">
+        <img src="<%= url_for('/images/dblp.png') %>" alt="DBLP">
+      </a>
+      <% } -%>
+    </div>
+    <% } -%>
+    <br>
+    <div class="copyright">
+      © <%= date(Date.now(), 'YYYY') %> Alessia Sorbo.
+      Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+    </div>
+  </footer>
+</body>

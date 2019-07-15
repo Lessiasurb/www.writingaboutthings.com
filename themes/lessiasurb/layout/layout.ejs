@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="<%= page.title || config.title %>">
+<meta name="twitter:card" content="summary_large_image">
+<% if (config.social && config.social.Twitter) { -%>
+<meta name="twitter:size" content="@<%= config.social.Twitter %>">
+<% } -%>
+<meta name="twitter:title" content="<%= page.title || config.title %>">
+<% if (page.featured_image) { -%>
+  <meta property="og:image" content="<%= page.featured_image %>">
+  <meta name="twitter:image" content="<%= page.featured_image %>">
+<% } -%>
+<%- css('css/main') %>
+<title><%= page.title || config.title %></title>
+<script>
+  function reloadTheme() {
+    switch (localStorage.getItem("theme")) {
+      case "dark-theme":
+        document.documentElement.className = "dark-theme";
+        break;
+      case "light-theme":
+      default:
+        document.documentElement.className = "light-theme";
+        break;
+    }
+  }
+  (function () {
+    if (!localStorage) {
+      return;
+    }
+    reloadTheme();
+  })();
+</script>
+</head>
+<%- body %>
+<script>
+  (function () {
+    if (!localStorage) {
+      return;
+    }
+    var switcher = document.querySelector(".theme-switcher > input");
+    if (!switcher) {
+      return;
+    }
+    switch (localStorage.getItem("theme")) {
+      case "dark-theme":
+        switcher.checked = true;
+        break;
+      case "light-theme":
+      default:
+        switcher.checked = false;
+        break;
+    }
+    switcher.addEventListener('change', function () {
+      console.log(switcher.checked);
+      localStorage.setItem("theme", switcher.checked ? "dark-theme" : "light-theme");
+      reloadTheme();
+    });
+  })();
+</script>
+</html>
