@@ -102,16 +102,29 @@ body.post {
     transition: border-bottom $theme-transition;
     position: relative;
     text-align: center;
-    background-position: center;
-    background-size: cover;
     border-bottom: map-get($light-theme, "post-list-line-border");
     padding-bottom: 1rem;
     margin-bottom: 3rem;
+    overflow: hidden;
     @media screen and (max-width: 900px) {
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
+    div.background {
+      filter: blur(1rem);
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      right: -1rem;
+      bottom: -1rem;
+      background-position: center;
+      background-size: cover;
+      @media screen and (max-width: 900px) {
+        filter: blur(0.75rem);
+      }
+    }
     a.home {
+      position: relative;
       margin: 0.5rem;
       background-image: url(../icons/light-theme/home.svg);
       background-size: cover;
@@ -120,6 +133,7 @@ body.post {
       height: 1.5rem / 63 * 55;
     }
     h1 {
+      position: relative;
       font-weight: inherit;
       line-height: 1.2;
       font-size: 3.998em;
