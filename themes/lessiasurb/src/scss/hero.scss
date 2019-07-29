@@ -133,11 +133,13 @@ body.post {
       height: 1.5rem / 63 * 55;
     }
     h1 {
+      transition: text-shadow $theme-transition;
       position: relative;
       font-weight: inherit;
       line-height: 1.2;
       font-size: 3.998em;
       text-align: center;
+      text-shadow: 0 0 10px map-get($light-theme, "background-color");
       margin: auto;
       width: 900px;
       @media screen and (max-width: 900px) {
@@ -189,6 +191,10 @@ html.dark-theme {
       a.home {
         transition: background-image $theme-transition;
         background-image: url(../icons/dark-theme/home.svg);
+      }
+      h1 {
+        transition: text-shadow $theme-transition;
+        text-shadow: 0 0 10px map-get($dark-theme, "background-color");
       }
     }
     > footer {
