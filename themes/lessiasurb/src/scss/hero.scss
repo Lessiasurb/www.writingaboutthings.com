@@ -25,6 +25,16 @@ body.homepage {
         right: 0;
         left: 0;
       }
+      &:after {
+        content: '';
+        background-image: url(../images/logo.png);
+        background-size: contain;
+        position: absolute;
+        margin-left: -2em;
+        bottom: -5em;
+        width: 4em;
+        height: 4em;
+      }
       > * {
         position: relative;
       }
