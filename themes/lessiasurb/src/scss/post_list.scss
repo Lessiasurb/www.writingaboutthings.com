@@ -150,6 +150,24 @@ a[name="posts"] {
       }
     }
   }
+  > .more {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem auto 1rem;
+    display: block;
+    text-align: center;
+    position: relative;
+    > button {
+      transition: border $theme-transition, background-color $theme-transition;
+      background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
+      color: grey;
+      font-size: 14px;
+      padding: 0.5rem;
+      border: map-get($light-theme, "post-list-line-border");
+      display: inline-block;
+      margin: 1rem;
+    }
+  }
 }
 html.dark-theme {
   .posts {
@@ -186,6 +204,13 @@ html.dark-theme {
             color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
           }
         }
+      }
+    }
+    > .more {
+      > button {
+        transition: border $theme-transition, background-color $theme-transition;
+        background-color: $background-color;
+        border: map-get($dark-theme, "post-list-line-border");
       }
     }
   }
