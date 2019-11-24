@@ -27,12 +27,9 @@
         break;
     }
   }
-  (function () {
-    if (!localStorage) {
-      return;
-    }
+  if (localStorage) {
     reloadTheme();
-  })();
+  }
   (function () {
     var doNotTrack = false;
     if (window.doNotTrack !== undefined) {
@@ -81,7 +78,6 @@
         break;
     }
     switcher.addEventListener('change', function () {
-      console.log(switcher.checked);
       localStorage.setItem("theme", switcher.checked ? "dark-theme" : "light-theme");
       reloadTheme();
     });

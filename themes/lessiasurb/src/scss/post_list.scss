@@ -6,7 +6,7 @@ a[name="posts"] {
   $date-color: adjust-color(map-get($light-theme, "color"), $lightness: +15%);
   list-style-type: none;
   margin: 0;
-  padding: 0 0 100px 0;
+  padding: 0 0 1rem 0;
   overflow: hidden;
   position: relative;
   &:before {
@@ -14,14 +14,14 @@ a[name="posts"] {
     content: '';
     display: block;
     width: 1px;
-    height: 200%;
     position: absolute;
     left: 50%;
     background-color: map-get($light-theme, "post-list-line-color");
-    top: -50%;
+    top: -1rem;
+    bottom: -1rem;
     z-index: 0;
   }
-  > .post {
+  .post {
     list-style-type: none;
     padding: 0;
     margin: 100px auto 0;
@@ -106,45 +106,43 @@ a[name="posts"] {
       p:first-child {
         transition: color $theme-transition;
         color: adjust-color(map-get($light-theme, "color"), $lightness: +15%);
-        font-size: 0.9rem;
+        font-size: 12px;
         margin: 80px 0 0 80px;
         @media screen and (max-width: 1200px) {
-          font-size: 0.8rem;
+          font-size: 12px;
           margin: 50px 0 0 60px;
         }
         @media screen and (max-width: 900px) {
-          font-size: 0.8rem;
           margin: 30px 0 0 20px;
         }
       }
       h3 {
-        font-size: 2rem;
+        font-size: 30px;
         line-height: 1.1;
         margin: 10px 100px 0 80px;
         @media screen and (max-width: 1200px) {
-          font-size: 1.5rem;
+          font-size: 24px;
           margin: 10px 60px 0 60px;
         }
         @media screen and (max-width: 900px) {
-          font-size: 1.5rem;
+          font-size: 24px;
           margin: 10px 30px 0 20px;
         }
         a {
           transition: color $theme-transition;
-          text-decoration: none;
           color: map-get($light-theme, "color");
         }
         + p {
           transition: color $theme-transition;
           color: adjust-color(map-get($light-theme, "color"), $lightness: +10%);
           margin: 10px 100px 0 80px;
-          font-size: 1.25rem;
+          font-size: 14px;
           line-height: 1.8;
           @media screen and (max-width: 1200px) {
-            margin: 1.1rem 60px 0 60px;
+            margin: 10px 60px 0 60px;
           }
           @media screen and (max-width: 900px) {
-            margin: 1.1rem 30px 0 20px;
+            margin: 10px 30px 0 20px;
           }
         }
       }
@@ -176,7 +174,7 @@ html.dark-theme {
       transition: background-color $theme-transition;
       background-color: map-get($dark-theme, "post-list-line-color");
     }
-    > .post {
+    .post {
       @media screen and (max-width: 900px) {
         transition: border-bottom $theme-transition, background-color $theme-transition;
         background-color: $background-color;
