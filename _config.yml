@@ -64,14 +64,7 @@ time_format: HH:mm:ss
 ## Themes: https://hexo.io/themes/
 theme: lessiasurb
 
-# Deploy
-deploy:
-  type: git
-  name: Alessia Sorbo
-  email: alessia.sorbo@hotmail.it
-  repo: git@github.com:Lessiasurb/website.git
-  branch: gh-pages
-
+# Asset Pipeline
 asset_pipeline:
   clean_css:
     enable: true
@@ -81,3 +74,11 @@ asset_pipeline:
     enable: true
   html_minifier:
     enable: true
+
+# Deploy
+deploy:
+  type: git
+  name: Alessia Sorbo
+  email: alessia.sorbo@hotmail.it
+  repo: git@github.com:Lessiasurb/website.git
+  branch: gh-pages
