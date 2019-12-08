@@ -75,6 +75,10 @@ asset_pipeline:
   html_minifier:
     enable: true
 
+# Featured Image
+featured_image:
+  absolute_path_reference: true
+
 # Deploy
 deploy:
   type: git
