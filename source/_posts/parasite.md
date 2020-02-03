@@ -1,6 +1,6 @@
 ---
 title: Parasite
-date: 2020-01-1821
+date: 2020-01-24
 featured_image: thumbnail.jpg
 ---
 A new director, [Bong Joon-ho](https://www.imdb.com/name/nm0094435/), conquered Hollywood. I didn't watch the entirety of his filmography, that, by the way, is very short. Although, I could write that his stories have always a hint of fairy-tale, or at least his latest movies. Like I said, I don't know his work in its totality.
