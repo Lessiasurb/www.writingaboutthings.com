@@ -1,7 +1,7 @@
 <body class="post">
   <header>
     <% if (page.featured_image) { -%>
-      <div class="background" style="background-image: url(<%= page.featured_image %>)"></div>
+      <div class="background" style="background-image: url(&quot;<%= page.featured_image %>&quot;)"></div>
     <% } -%>
     <a class="home" href="<%= url_for('/') %>"></a>
     <h1><%- page.title -%></h1>
