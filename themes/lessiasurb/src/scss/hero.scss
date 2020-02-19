@@ -157,6 +157,11 @@ body.post {
         line-height: 1.1;
         font-size: 2.998em;
       }
+      small {
+        font-size: 0.505em;
+        font-style: italic;
+        text-shadow: 0 0 7px map-get($light-theme, "background-color");
+      }
     }
   }
   > footer {
@@ -205,6 +210,10 @@ html.dark-theme {
       h1 {
         transition: text-shadow $theme-transition;
         text-shadow: 0 0 10px map-get($dark-theme, "background-color");
+        small {
+          transition: text-shadow $theme-transition;
+          text-shadow: 0 0 7px map-get($dark-theme, "background-color");
+        }
       }
     }
     > footer {

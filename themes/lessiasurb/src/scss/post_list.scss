@@ -132,6 +132,13 @@ a[name="posts"] {
           transition: color $theme-transition;
           color: map-get($light-theme, "color");
         }
+        small {
+          display: inline-block;
+          font-size: 0.707em;
+          font-style: italic;
+          font-weight: normal;
+          margin-top: 0.5em;
+        }
         + p {
           transition: color $theme-transition;
           color: adjust-color(map-get($light-theme, "color"), $lightness: +10%);
