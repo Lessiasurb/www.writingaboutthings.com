@@ -2,6 +2,8 @@
 title: My Resignation
 date: 2019-08-18
 featured_image: thumbnail.jpg
+categories:
+- People
 ---
 It took me one year and 8 months to get the final decision.
 Since I learned my duties, my job was nice. I got along with my colleagues and reached my best skills.

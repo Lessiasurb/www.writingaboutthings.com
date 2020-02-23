@@ -2,6 +2,8 @@
 title: Is your boyfriend annoying or caring?
 date: 2019-07-21
 featured_image: thumbnail.jpg
+categories:
+- People
 ---
 There is a moment in life where everybody gets stuck. If you don't, congrats, you won against life. However my sticking period is lasting one year and is continuing.
 

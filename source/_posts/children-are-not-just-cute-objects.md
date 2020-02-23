@@ -3,6 +3,8 @@ title: Children are not just cute objects
 subtitle: "A reflection on Childhood's Underrated Potential"
 date: 2020-02-19
 featured_image: thumbnail.jpg
+categories:
+- Education
 ---
 Recently I answered to a Instagram Story about an interesting [study](https://www.sciencedirect.com/science/article/pii/S0010027719302288) pursued by [Esti Blanco-Elorrieta](https://scholar.google.com/citations?user=hG3r1-YAAAAJ). The linked [article](https://elpais.com/elpais/2020/01/27/ciencia/1580127774_061342.html) speaks about how bilingual people can express themselves more easily and in a more sophisticated way. However, what caught my interest is about childhood:
 

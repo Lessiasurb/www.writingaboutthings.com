@@ -2,6 +2,8 @@
 title: How to treat a barista
 date: 2019-07-29
 featured_image: thumbnail.jpg
+categories:
+- Education
 ---
 Everybody once or twice a week (or in life) goes to take a coffee.
 Let's be clear: to be served is nice, but some people forget that a human being is providing you a service.

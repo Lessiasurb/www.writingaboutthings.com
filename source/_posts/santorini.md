@@ -2,6 +2,8 @@
 title: Santorini
 date: 2019-11-03
 featured_image: thumbnail.jpg
+categories:
+- Travel
 ---
 For our first real vacation together, my boyfriend and I decided to fly to Greece. More specifically, to one of the most expensive islands there: _Santorini_.
 

@@ -2,6 +2,8 @@
 title: A Sport Reflection
 date: 2019-11-17
 featured_image: thumbnail.jpg
+categories:
+- Education
 ---
 I recently went to a kids soccer match. While watching in the cold 22 children running behind a ball on a nice Saturday afternoon, my mind started to elaborate that image.
 Those children weren't having fun: none of them were smiling. Their relatives were screaming and talking badly about the composition of the team. The coach was even worse, insulting every single one of them for their mistakes.

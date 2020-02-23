@@ -2,6 +2,8 @@
 title: The Fast Fashion Rising
 date: 2019-11-27
 featured_image: thumbnail.jpg
+categories:
+- Education
 ---
 I recently watched ["The Ugly Truth of Fast Fashion"](https://www.youtube.com/watch?v=xGF3ObOBbac), an episode from "Patriot Act". For those who don't already know, it is a web series from [Netflix](https://www.netflix.com/title/80239931) hosted by [Hasan Minhaj](https://www.imdb.com/name/nm3653778/) that, every week, analyzes a different international dramatic problem using comedy to catch your attention, whenever possible of course. This episode is worth watching, if you have time. If you are too busy, here I will sum up for you the key points.
 

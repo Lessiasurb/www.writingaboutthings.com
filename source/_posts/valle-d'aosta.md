@@ -2,6 +2,8 @@
 title: "Valle d'Aosta"
 date: 2020-02-13
 featured_image: thumbnail.jpg
+categories:
+- Travel
 ---
 Valle D'Aosta is well known, at least to those of you who like skiing. For the others, this article could be interesting.
 
@@ -13,7 +15,7 @@ Sadly there wasn't enough time to visit them all, but we managed to stop by the 
 
 ## Forte di Bard
 
-Bard is the first step when you arrive in Valle D'aosta. The [fort](https://www.fortedibard.it/en/tickets-prices/) stands on a rock and is well surrounded by high walls, which make a massive impression. The entrance ticket is quite expensive for what you can see inside. With the combined ticket you get to enter the Museum of the Alps and the prison of the Fort. Sadly those museums didn't catch my interest, but 
+Bard is the first step when you arrive in Valle D'aosta. The [fort](https://www.fortedibard.it/en/tickets-prices/) stands on a rock and is well surrounded by high walls, which make a massive impression. The entrance ticket is quite expensive for what you can see inside. With the combined ticket you get to enter the Museum of the Alps and the prison of the Fort. Sadly those museums didn't catch my interest, but
 
 >They could be particularly interesting for kids and enthusiasts
 

@@ -2,6 +2,8 @@
 title: The Meat returns
 date: 2019-09-05
 featured_image: thumbnail.jpg
+categories:
+- People
 ---
 For almost a year I succeeded on being a vegetarian.
 

@@ -2,6 +2,8 @@
 title: 'Chiara Ferragni: Entrepreneur, Woman, Human'
 date: 2020-01-14
 featured_image: thumbnail.jpg
+categories:
+- People
 ---
 [Chiara Ferragni](https://www.theblondesalad.com/) invented a new business. She managed to transform her hobby in her job. How many of us can brag about it? Not many. I just watched her documentary and it was impossible to hold in my emotions. [Chiara Unposted](https://www.imdb.com/title/tt9699028/) tells the story of an incredible business woman. A woman that wasn’t taken seriously and sometimes even obstructed on her way. We can easily say that she got out of her comfort zone. Something that is very difficult in this times, because society has needs and wants productivity, talent, and let’s be honest... Society is like a snob. Nothing will ever be enough.
 

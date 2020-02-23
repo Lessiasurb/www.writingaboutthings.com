@@ -2,6 +2,8 @@
 title: Joker
 date: 2019-11-20
 featured_image: thumbnail.jpg
+categories:
+- Movies
 ---
 I went to watch [Joker](https://www.imdb.com/title/tt7286456/). Everyone I know loved this movie so I was really hyped. I've waited to have time to watch it and enjoy it. Now that I did it, I don't even know where to start talking about it.
 

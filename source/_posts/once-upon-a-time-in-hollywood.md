@@ -2,6 +2,8 @@
 title: Once Upon a Time in Hollywood
 date: 2019-09-29
 featured_image: thumbnail.jpg
+categories:
+- Movies
 ---
 I recently watched the new Quentin Tarantino's movie and I couldn't resist to _write about it_.
 
