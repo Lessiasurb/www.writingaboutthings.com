@@ -1,14 +1,15 @@
 <% var current_category = site.categories.filter(function (category) {
           return category.name === page.category;
         }).first(),
-        categories = site.categories.filter(function (category) {
+        categories = _.sortBy(site.categories.filter(function (category) {
           if (current_category) {
             return current_category._id === category.parent;
           } else {
             return !category.parent;
           }
-        }).toArray();
-   if (categories.length) { -%>
+        }).toArray(), "name");
+   if (categories.length) {
+     -%>
   <div class="list-item">
     <ul class="categories">
       <% categories.forEach(function (category) { -%>
