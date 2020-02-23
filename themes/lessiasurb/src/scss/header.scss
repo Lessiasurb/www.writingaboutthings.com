@@ -10,6 +10,7 @@ body.homepage {
     background-size: cover;
     position: relative;
     text-align: center;
+    margin-bottom: 1rem;
     > .title {
       position: absolute;
       top: 30%;
@@ -66,48 +67,9 @@ body.homepage {
       color: #eeeeee;
     }
   }
-  > footer {
-    text-align: center;
-    position: relative;
-    &:before {
-      transition: background-color $theme-transition;
-      content: '';
-      width: 1px;
-      position: absolute;
-      left: 50%;
-      background-color: map-get($light-theme, "post-list-line-color");
-      top: 0;
-      bottom: 0;
-      z-index: -1;
-    }
-    .copyright {
-      transition: border $theme-transition, background-color $theme-transition;
-      background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
-      color: grey;
-      font-size: 1rem;
-      padding: 1em;
-      border: map-get($light-theme, "post-list-line-border");
-      display: inline-block;
-      margin: 1rem;
-    }
-    .social {
-      transition: border $theme-transition, background-color $theme-transition;
-      background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
-      color: grey;
-      font-size: 1rem;
-      padding: 0.5rem;
-      border: map-get($light-theme, "post-list-line-border");
-      display: inline-block;
-      margin: 1rem;
-      a:link, a:visited, a:hover, a:active {
-        padding: 0.5rem;
-        text-decoration: none;
-      }
-    }
-  }
 }
 
-body.post {
+body.post, body.category {
   > header {
     transition: border-bottom $theme-transition;
     position: relative;
@@ -119,19 +81,6 @@ body.post {
     @media screen and (max-width: 900px) {
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
-    }
-    div.background {
-      filter: blur(1rem);
-      position: absolute;
-      top: -1rem;
-      left: -1rem;
-      right: -1rem;
-      bottom: -1rem;
-      background-position: center;
-      background-size: cover;
-      @media screen and (max-width: 900px) {
-        filter: blur(0.75rem);
-      }
     }
     a.home {
       position: relative;
@@ -164,42 +113,45 @@ body.post {
       }
     }
   }
-  > footer {
-    transition: color $theme-transition, border-top $theme-transition;
-    text-align: center;
-    color: adjust-color(map-get($light-theme, "color"), $lightness: +20%);
-    font-size: 14px;
-    padding: 1em;
-    border-top: map-get($light-theme, "post-list-line-border");
-    margin-bottom: 3em;
+}
+
+body.post {
+  div.background {
+    filter: blur(1rem);
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    background-position: center;
+    background-size: cover;
     @media screen and (max-width: 900px) {
-      margin-bottom: 1em;
+      filter: blur(0.75rem);
+    }
+  }
+}
+
+body.category {
+  header:before {
+    content: '';
+    background-image: url(../images/hero.jpg);
+    background-color: #f3ad9f;
+    filter: blur(1rem);
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    background-position: center;
+    background-size: cover;
+    @media screen and (max-width: 900px) {
+      filter: blur(0.75rem);
     }
   }
 }
 
 html.dark-theme {
-  body.homepage {
-    > footer {
-      &:before {
-        transition: background-color $theme-transition;
-        background-color: map-get($dark-theme, "post-list-line-color");
-      }
-      .copyright {
-        transition: color $theme-transition, background-color $theme-transition, border $theme-transition;
-        background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
-        color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
-        border: map-get($dark-theme, "post-list-line-border");
-      }
-      .social {
-        transition: color $theme-transition, background-color $theme-transition, border $theme-transition;
-        background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
-        color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
-        border: map-get($dark-theme, "post-list-line-border");
-      }
-    }
-  }
-  body.post {
+  body.post, body.category {
     > header {
       transition: border-bottom $theme-transition;
       border-bottom: map-get($dark-theme, "post-list-line-border");
@@ -215,10 +167,6 @@ html.dark-theme {
           text-shadow: 0 0 7px map-get($dark-theme, "background-color");
         }
       }
-    }
-    > footer {
-      transition: border-top $theme-transition;
-      border-top: map-get($dark-theme, "post-list-line-border");
     }
   }
 }
@@ -236,7 +184,7 @@ body {
       }
     }
   }
-  &.post {
+  &.post, &.category {
     > header {
       .theme-switcher {
         top: 0.5rem;

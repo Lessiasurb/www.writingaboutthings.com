@@ -1,0 +1,23 @@
+<% var current_category = site.categories.filter(function (category) {
+          return category.name === page.category;
+        }).first(),
+        categories = site.categories.filter(function (category) {
+          if (current_category) {
+            return current_category._id === category.parent;
+          } else {
+            return !category.parent;
+          }
+        }).toArray();
+   if (categories.length) { -%>
+  <div class="list-item">
+    <ul class="categories">
+      <% categories.forEach(function (category) { -%>
+        <li class="category">
+          <a href="<%- url_for(category.link || category.path) -%>">
+            <%- category.name -%>
+          </a>
+        </li>
+      <% }); -%>
+    </ul>
+  </div>
+<% } -%>

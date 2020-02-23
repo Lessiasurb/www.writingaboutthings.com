@@ -21,6 +21,22 @@ html, body {
   padding: 0;
 }
 
+.list-item {
+  text-align: center;
+  position: relative;
+  &:before {
+    transition: background-color $theme-transition;
+    content: '';
+    width: 1px;
+    position: absolute;
+    left: 50%;
+    background-color: map-get($light-theme, "post-list-line-color");
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
 html.dark-theme {
   transition: color $theme-transition, background-color $theme-transition;
   background-color: map-get($dark-theme, "background-color");
@@ -28,5 +44,11 @@ html.dark-theme {
   * {
     transition: color $theme-transition;
     color: map-get($dark-theme, "color");
+  }
+  .list-item {
+    &:before {
+      transition: background-color $theme-transition;
+      background-color: map-get($dark-theme, "post-list-line-color");
+    }
   }
 }

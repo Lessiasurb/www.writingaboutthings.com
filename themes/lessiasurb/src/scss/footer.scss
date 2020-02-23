@@ -1,0 +1,85 @@
+body.homepage, body.category {
+  > footer {
+    text-align: center;
+    position: relative;
+    &:before {
+      transition: background-color $theme-transition;
+      content: '';
+      width: 1px;
+      position: absolute;
+      left: 50%;
+      background-color: map-get($light-theme, "post-list-line-color");
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    .copyright {
+      transition: border $theme-transition, background-color $theme-transition;
+      background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
+      color: grey;
+      font-size: 1rem;
+      padding: 1em;
+      border: map-get($light-theme, "post-list-line-border");
+      display: inline-block;
+      margin: 1rem;
+    }
+    .social {
+      transition: border $theme-transition, background-color $theme-transition;
+      background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
+      color: grey;
+      font-size: 1rem;
+      padding: 0.5rem;
+      border: map-get($light-theme, "post-list-line-border");
+      display: inline-block;
+      margin: 1rem;
+      a:link, a:visited, a:hover, a:active {
+        padding: 0.5rem;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+body.post {
+  > footer {
+    transition: color $theme-transition, border-top $theme-transition;
+    text-align: center;
+    color: adjust-color(map-get($light-theme, "color"), $lightness: +20%);
+    font-size: 14px;
+    padding: 1em;
+    border-top: map-get($light-theme, "post-list-line-border");
+    margin-bottom: 3em;
+    @media screen and (max-width: 900px) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+html.dark-theme {
+  body.homepage, body.category  {
+    > footer {
+      &:before {
+        transition: background-color $theme-transition;
+        background-color: map-get($dark-theme, "post-list-line-color");
+      }
+      .copyright {
+        transition: color $theme-transition, background-color $theme-transition, border $theme-transition;
+        background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
+        color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
+        border: map-get($dark-theme, "post-list-line-border");
+      }
+      .social {
+        transition: color $theme-transition, background-color $theme-transition, border $theme-transition;
+        background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
+        color: adjust-color(map-get($dark-theme, "color"), $lightness: -20%);
+        border: map-get($dark-theme, "post-list-line-border");
+      }
+    }
+  }
+  body.post {
+    > footer {
+      transition: border-top $theme-transition;
+      border-top: map-get($dark-theme, "post-list-line-border");
+    }
+  }
+}

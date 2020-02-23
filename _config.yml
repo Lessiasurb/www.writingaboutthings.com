@@ -40,6 +40,8 @@ highlight:
   tab_replace:
 
 per_page: 0
+category_generator:
+  per_page: 0
 
 social:
   Twitter: LessiaSurb
