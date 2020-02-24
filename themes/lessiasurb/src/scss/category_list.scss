@@ -5,15 +5,34 @@
   color: grey;
   font-size: 1rem;
   padding: 0.5rem;
+  min-width: 8rem;
   border: map-get($light-theme, "post-list-line-border");
   display: inline-block;
   margin: 1rem;
+  overflow: hidden;
   a:link, a:visited, a:hover, a:active {
     text-decoration: none;
   }
   .category {
-    display: inline-block;
+    transition: padding $theme-transition, font-size $theme-transition;
+    display: block;
+    text-align: center;
     padding: 0.5rem;
+    overflow: hidden;
+    &.hidden {
+      padding: 0;
+      font-size: 0;
+    }
+  }
+  .show {
+    display: block;
+    text-align: center;
+    button {
+      color: grey;
+      font-size: 14px;
+      padding: 0.5rem;
+      border: none;
+    }
   }
 }
 

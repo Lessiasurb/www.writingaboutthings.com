@@ -21,4 +21,27 @@
       <% }); -%>
     </ul>
   </div>
+  <script>
+    (function () {
+      var ul = document.querySelector("ul.categories"),
+          item,
+          show_container,
+          show;
+      while (item = ul.querySelector(".category:not(.hidden)")) {
+        item.className = "category hidden";
+      }
+      show_container = document.createElement('li');
+      show_container.className = "show";
+      show = document.createElement('button');
+      show.innerHTML = "Categories";
+      show.addEventListener('click', function () {
+        while (item = ul.querySelector(".category.hidden")) {
+          item.className = "category";
+        }
+        show_container.remove();
+      });
+      show_container.appendChild(show);
+      ul.insertBefore(show_container, ul.childNodes[0]);
+    })();
+  </script>
 <% } -%>
