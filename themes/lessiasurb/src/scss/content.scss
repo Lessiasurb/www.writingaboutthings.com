@@ -30,6 +30,14 @@ body.post {
       }
     }
 
+    > p:first-child::first-letter {
+      font-size: 3.998em;
+      float: left;
+      margin-top: -0.3998em;
+      margin-bottom: -0.3998em;
+      margin-left: -0.1em;
+    }
+
     h1, h2, h3, h4 {
       font-weight: inherit;
       line-height: 1.42;
