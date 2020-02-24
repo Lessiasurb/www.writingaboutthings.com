@@ -44,18 +44,20 @@
       noscript.remove(); // remove the noscript
     }
     if (document.querySelector("ul.posts noscript")) {
-      more_container = document.createElement('li');
-      more_container.className = "more";
-      more = document.createElement('button');
-      more.innerHTML = "More Posts";
-      more.addEventListener('click', function () {
-        showNextPage(document.querySelector("ul.posts"));
-        if (!document.querySelector("ul.posts noscript")) {
-          more_container.remove();
-        }
-      });
-      more_container.appendChild(more);
-      document.querySelector("ul.posts").appendChild(more_container);
+      (function () {
+        more_container = document.createElement('li');
+        more_container.className = "more";
+        more = document.createElement('button');
+        more.innerHTML = "More Posts";
+        more.addEventListener('click', function () {
+          showNextPage(document.querySelector("ul.posts"));
+          if (!document.querySelector("ul.posts noscript")) {
+            more_container.remove();
+          }
+        });
+        more_container.appendChild(more);
+        document.querySelector("ul.posts").appendChild(more_container);
+      })();
     }
   })();
 </script>
