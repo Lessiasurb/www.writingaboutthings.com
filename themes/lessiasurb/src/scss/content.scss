@@ -30,7 +30,7 @@ body.post {
       }
     }
 
-    > p:first-child::first-letter {
+    > p:first-of-type::first-letter {
       font-size: 3.998em;
       float: left;
       margin-top: -0.3998em;
