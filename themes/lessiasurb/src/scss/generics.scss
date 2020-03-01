@@ -35,6 +35,24 @@ html, body {
     bottom: 0;
     z-index: -1;
   }
+  > * {
+    transition: border $theme-transition, background-color $theme-transition;
+    background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: +10%);
+    color: grey;
+    font-size: 1rem;
+    min-width: 8rem;
+    border: map-get($light-theme, "post-list-line-border");
+    display: inline-block;
+    margin: 1rem;
+    overflow: hidden;
+  }
+}
+
+.presentation {
+  font-size: 1.5em;
+  font-style: italic;
+  max-width: 750px;
+  padding: 1rem;
 }
 
 html.dark-theme {
@@ -50,5 +68,10 @@ html.dark-theme {
       transition: background-color $theme-transition;
       background-color: map-get($dark-theme, "post-list-line-color");
     }
+  }
+  > * {
+    transition: border $theme-transition, background-color $theme-transition;
+    background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
+    border: map-get($dark-theme, "post-list-line-border");
   }
 }

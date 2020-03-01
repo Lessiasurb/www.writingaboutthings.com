@@ -1,15 +1,6 @@
 .categories {
   list-style-type: none;
-  transition: border $theme-transition, background-color $theme-transition;
-  background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: +10%);
-  color: grey;
-  font-size: 1rem;
   padding: 0.5rem;
-  min-width: 8rem;
-  border: map-get($light-theme, "post-list-line-border");
-  display: inline-block;
-  margin: 1rem;
-  overflow: hidden;
   a:link, a:visited, a:hover, a:active {
     text-decoration: none;
   }
@@ -33,13 +24,5 @@
       padding: 0.5rem;
       border: none;
     }
-  }
-}
-
-html.dark-theme {
-  .categories {
-    transition: border $theme-transition, background-color $theme-transition;
-    background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
-    border: map-get($dark-theme, "post-list-line-border");
   }
 }
