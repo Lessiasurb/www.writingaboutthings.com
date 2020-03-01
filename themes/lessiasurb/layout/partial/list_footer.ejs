@@ -36,6 +36,11 @@
       <img src="<%= url_for('/images/medium.png') %>" alt="Medium">
     </a>
     <% } -%>
+    <% if (config.social.Facebook) { -%>
+    <a rel="external" href="https://facebook.com/<%= config.social.Facebook %>" target="_blank">
+      <img src="<%= url_for('/images/facebook.png') %>" alt="Facebook">
+    </a>
+    <% } -%>
   </div>
   <% } -%>
   <br>
