@@ -1,5 +1,5 @@
 <ul class="posts">
-<% var page_size = 5;
+<% var page_size = config.per_page_dynamic || 5;
   page.posts.each(function (post, index) {
     if (index !== 0 && index % page_size === 0) {
       if (index !== page_size) { -%>
