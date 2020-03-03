@@ -21,6 +21,10 @@ html, body {
   padding: 0;
 }
 
+a[name="posts"] {
+  display: block;
+}
+
 .list-item {
   text-align: center;
   position: relative;

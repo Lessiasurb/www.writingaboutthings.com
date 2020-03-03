@@ -1,6 +1,3 @@
-a[name="posts"] {
-  display: block;
-}
 .posts {
   $background-color: adjust-color(map-get($light-theme, "background-color"), $lightness: -1%);
   $date-color: adjust-color(map-get($light-theme, "color"), $lightness: +15%);

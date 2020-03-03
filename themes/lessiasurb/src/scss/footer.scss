@@ -32,10 +32,6 @@ body.homepage, body.category {
       border: map-get($light-theme, "post-list-line-border");
       display: inline-block;
       margin: 1rem;
-      a:link, a:visited, a:hover, a:active {
-        padding: 0.5rem;
-        text-decoration: none;
-      }
     }
   }
 }
@@ -45,12 +41,29 @@ body.post {
     transition: color $theme-transition, border-top $theme-transition;
     text-align: center;
     color: adjust-color(map-get($light-theme, "color"), $lightness: +20%);
-    font-size: 14px;
     padding: 1em;
     border-top: map-get($light-theme, "post-list-line-border");
     margin-bottom: 3em;
+    .license {
+      font-size: 14px;
+    }
     @media screen and (max-width: 900px) {
       margin-bottom: 1em;
+    }
+  }
+}
+
+body.homepage, body.category, body.post {
+  > footer {
+    .social {
+      > * {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+      }
     }
   }
 }
