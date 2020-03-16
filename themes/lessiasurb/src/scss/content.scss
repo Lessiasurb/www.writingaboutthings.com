@@ -16,6 +16,8 @@ body.post {
         padding-left: 2rem;
         padding-right: 2rem;
       }
+    }
+    > p {
       > img, > canvas, > iframe, > video, > svg, > select, > textarea {
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
