@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="<%= page.title || config.title %>">
 <meta name="twitter:title" content="<%= page.title || config.title %>">
+<% if (page.subtitle) { -%>
+<meta name="twitter:description" content="<%= page.subtitle %>">
+<meta name="og:description" content="<%= page.subtitle %>">
+<% } -%>
 <meta name="twitter:card" content="summary_large_image">
 <% if (config.social && config.social.Twitter) { -%>
 <meta name="twitter:creator" content="@<%= config.social.Twitter %>">
