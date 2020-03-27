@@ -72,10 +72,10 @@ html.dark-theme {
       transition: background-color $theme-transition;
       background-color: map-get($dark-theme, "post-list-line-color");
     }
-  }
-  > * {
-    transition: border $theme-transition, background-color $theme-transition;
-    background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
-    border: map-get($dark-theme, "post-list-line-border");
+    > * {
+      transition: border $theme-transition, background-color $theme-transition;
+      background-color: adjust-color(map-get($dark-theme, "background-color"), $lightness: +10%);
+      border: map-get($dark-theme, "post-list-line-border");
+    }
   }
 }
