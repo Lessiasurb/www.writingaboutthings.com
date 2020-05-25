@@ -8,7 +8,7 @@
     transition: padding $theme-transition, font-size $theme-transition;
     display: block;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.9rem;
     overflow: hidden;
     &.hidden {
       padding: 0;
@@ -18,9 +18,9 @@
   .show {
     display: block;
     text-align: center;
-    button {
+    > a {
       color: grey;
-      font-size: 14px;
+      font-size: 0.9rem;
       padding: 0.5rem;
       border: none;
     }
