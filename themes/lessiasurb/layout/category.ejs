@@ -1,10 +1,10 @@
 <body class="category">
   <header>
-    <a class="home" title="Go Home" href="<%= url_for('/') %>"></a>
+    <%- partial('partial/home_button', {}, {cached: true}) -%>
     <h1><%- page.category -%></h1>
-    <%- partial('partial/theme_switcher') %>
+    <%- partial('partial/theme_switcher', {}, {cached: true}) -%>
   </header>
-  <%- partial('partial/category_list') %>
-  <%- partial('partial/post_list') %>
-  <%- partial('partial/list_footer') %>
+  <%- partial('partial/category_list') -%>
+  <%- partial('partial/post_list') -%>
+  <%- partial('partial/list_footer', {}, {cached: true}) -%>
 </body>

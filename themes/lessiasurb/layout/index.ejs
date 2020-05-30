@@ -5,7 +5,7 @@
       <h2>Writing <span class="lighter">About</span> Things</h2>
     </div>
     <a class="down" href="#posts" rel="nofollow" title="go to posts"></a>
-    <%- partial('partial/theme_switcher') %>
+    <%- partial('partial/theme_switcher', {}, {cached: true}) -%>
   </header>
   <a name="posts"></a>
   <div class="list-item">
@@ -14,7 +14,7 @@
       Seeking the deepest concepts while being informative.
     </div>
   </div>
-  <%- partial('partial/category_list') %>
-  <%- partial('partial/post_list') %>
-  <%- partial('partial/list_footer') %>
+  <%- partial('partial/category_list') -%>
+  <%- partial('partial/post_list') -%>
+  <%- partial('partial/list_footer', {}, {cached: true}) -%>
 </body>
