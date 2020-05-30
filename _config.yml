@@ -82,6 +82,7 @@ asset_pipeline:
     enable: true
   imagemin:
     enable: true
+    progressive: true
   html_minifier:
     enable: true
 
