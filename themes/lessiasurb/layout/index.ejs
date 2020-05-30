@@ -1,3 +1,11 @@
+<head>
+<%- partial('partial/metadata', {
+    config: config,
+    theme: theme,
+    canonical: page.path
+  }) -%>
+<%- partial('partial/pre_body_scripts') -%>
+</head>
 <body class="homepage">
   <header>
     <div class="title">
@@ -17,4 +25,5 @@
   <%- partial('partial/category_list') -%>
   <%- partial('partial/post_list') -%>
   <%- partial('partial/list_footer', {}, {cached: true}) -%>
+  <%- partial('partial/post_body_scripts') -%>
 </body>
