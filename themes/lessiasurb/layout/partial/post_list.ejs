@@ -1,15 +1,16 @@
 <ul class="posts">
 <% var page_size = config.per_page_dynamic || 5;
   page.posts.each(function (post, index) {
-    if (index !== 0 && index % page_size === 0) {
-      if (index !== page_size) { -%>
-        </noscript>
-      <%  } -%>
-  <noscript>
-<%  } -%>
+    var page = Math.floor(index / page_size); -%>
   <li class="post">
     <a class="cover" href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
+      <% if (page != 0) { -%>
+      <noscript>
+      <% } -%>
       <img src="<%= post.featured_image %>" alt="<%= post.title %>">
+      <% if (page != 0) { -%>
+      </noscript>
+      <% } -%>
     </a>
     <div class="details">
       <p><%= date(post.date) %></p>
@@ -25,39 +26,56 @@
       <p><%= post.excerpt %></p>
     </div>
   </li>
-<% });
-   if (page.posts.length > page_size) { -%>
-  </noscript>
-<% } -%>
+<% });-%>
 </ul>
 <script>
   (function () {
-    function showNextPage(ul) {
-      var noscript = ul.querySelector('noscript'), // the first noscript
-          parser = document.createElement('div'), // a temporary element to parse the content of the noscript
-          li;
-      parser.innerHTML = noscript.innerHTML; // parse the pages
-      while (li = parser.querySelector('li')) { // for each parse li tag
-        li.remove(); // remove it from the parser
-        ul.insertBefore(li, noscript); // insert it before the noscript
+    function DynamicListLoader(ul, page_size) {
+      this.ul = ul;
+      this.page_size = page_size;
+      var post,
+          more;
+      function nextPostToHide() {
+        return ul.querySelector(':scope > li.post:nth-child(1n+' + (page_size + 1) + ')');
       }
-      noscript.remove(); // remove the noscript
+      if (post = nextPostToHide()) {
+        do {
+          post.className = 'hidden-post';
+        } while (post = nextPostToHide());
+        this.more_container = document.createElement('li');
+        this.more_container.className = 'more';
+        more = document.createElement('button');
+        more.innerHTML = 'More Posts';
+        more.addEventListener('click', this.showNextPage.bind(this));
+        this.more_container.appendChild(more);
+        ul.appendChild(this.more_container);
+      }
     }
-    if (document.querySelector("ul.posts noscript")) {
-      (function () {
-        more_container = document.createElement('li');
-        more_container.className = "more";
-        more = document.createElement('a');
-        more.innerHTML = "More Posts";
-        more.addEventListener('click', function () {
-          showNextPage(document.querySelector("ul.posts"));
-          if (!document.querySelector("ul.posts noscript")) {
-            more_container.remove();
-          }
-        });
-        more_container.appendChild(more);
-        document.querySelector("ul.posts").appendChild(more_container);
-      })();
+    DynamicListLoader.prototype.showNextPage = function() {
+      var n_elements_to_show = this.page_size,
+          li,
+          noscript;
+      while (n_elements_to_show) {
+        if (!(li = this.ul.querySelector(':scope > li.hidden-post'))) { // first hidden post
+          break;
+        }
+        while (noscript = li.querySelector('noscript')) { // for each noscript
+          noscript.insertAdjacentHTML('beforebegin', noscript.innerHTML); // parse and insert content before node
+          noscript.remove(); // remove the noscript
+        }
+        li.className = 'post'; // make the post visible
+        n_elements_to_show -= 1;
+      }
+      if (!this.ul.querySelector(':scope > .hidden-post')) {
+        this.more_container.remove();
+      }
     }
+    new DynamicListLoader(document.querySelector('ul.posts'), <%= page_size %>);
+  })();
+  (function () {
+    document.querySelector('a[href="#posts"]').addEventListener('click', function (event) {
+      document.querySelector('a[name="posts"]').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      event.preventDefault();
+    });
   })();
 </script>
