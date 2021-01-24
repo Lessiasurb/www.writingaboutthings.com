@@ -1,13 +1,13 @@
-<% var current_category = site.categories.filter(function (category) {
-          return category.name === page.category;
-        }).first(),
-        categories = _.sortBy(site.categories.filter(function (category) {
+<% const current_category = site.categories.filter(
+          (category) => category.name === page.category
+        ).first(),
+        categories = site.categories.filter((category) => {
           if (current_category) {
             return current_category._id === category.parent;
           } else {
             return !category.parent;
           }
-        }).toArray(), "name");
+        }).sort((a, b) => a.name > b.name ? 1 : (a.name < b.name ? -1: 0));
    if (categories.length) {
      -%>
   <div class="list-item">
