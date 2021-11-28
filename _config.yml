@@ -76,16 +76,32 @@ time_format: HH:mm:ss
 theme: lessiasurb
 
 # Asset Pipeline
-asset_pipeline:
-  clean_css:
-    enable: true
-  uglify_js:
-    enable: true
-  imagemin:
-    enable: true
-    progressive: true
-  html_minifier:
-    enable: true
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+css_minifier:
+  enable: true
+  silent: false
+  exclude:
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  silent: false
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false
 
 # Featured Image
 featured_image:
@@ -96,5 +112,5 @@ deploy:
   type: git
   name: Alessia Sorbo
   email: alessia.sorbo@hotmail.it
-  repo: git@github.com:Lessiasurb/website.git
+  repo: git@github.com:ourwebsites/www.writingaboutthings.git
   branch: gh-pages
